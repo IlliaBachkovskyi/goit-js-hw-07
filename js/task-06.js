@@ -1,9 +1,9 @@
 const inputRef = document.getElementById('validation-input');
 console.log(inputRef);
 
-inputRef.addEventListener('blur', countSymbol);
+inputRef.addEventListener('blur', onCountSymbol);
 
-function countSymbol(e) {
+function onCountSymbol(e) {
     const maxLength = inputRef.getAttribute('data-length');
     const fildVal = e.target.value;
     if (fildVal.length > maxLength || fildVal.length < maxLength) {

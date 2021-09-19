@@ -15,3 +15,4 @@ function onInputValues(event) {
     
     // strangerRef.textContent = "" ? 'незнакомец' : event.target.value;
 };
+    
