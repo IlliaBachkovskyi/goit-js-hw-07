@@ -6,10 +6,13 @@ inputRef.addEventListener('blur', onCountSymbol);
 function onCountSymbol(e) {
     const maxLength = inputRef.getAttribute('data-length');
     const fildVal = e.target.value;
-    if (fildVal.length > maxLength || fildVal.length < maxLength) {
-        inputRef.classList.add('invalid');
-    } else if (fildVal.length == maxLength) {
-        inputRef.classList.add('valid')
-    };
+if (fildVal.length == maxLength) {
+    if (inputRef.classList.contains("invalid"))
+        inputRef.classList.replace("invalid", "valid");
+        inputRef.classList.add("valid");
+  } else {
+    if (inputRef.classList.contains("valid"))
+        inputRef.classList.replace("valid", "invalid");
+        inputRef.classList.add("invalid");
+    }
 };
-console.log(inputRef.getAttribute('data-length'));

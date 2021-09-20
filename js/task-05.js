@@ -4,15 +4,10 @@ console.log(inputRef);
 const strangerRef = document.getElementById('name-output');
 console.log(strangerRef);
 
-inputRef.addEventListener('input', onInputValues);
-
-function onInputValues(event) {
-    if ("") {
-        strangerRef.textContent = 'незнакомец';
+inputRef.oninput = function () {
+    if (inputRef.value === "") {
+        strangerRef.innerHTML = 'незнакомец';
     } else {
-        strangerRef.textContent = event.target.value;
+        strangerRef.innerHTML = inputRef.value;
     };
-    
-    // strangerRef.textContent = "" ? 'незнакомец' : event.target.value;
-};
-    
+ };   
